@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by sookymike (http://jsbin.com/vumale/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ora</title>
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<style id="jsbin-css">
+* {margin:0; padding:0;}
+#clock{
+  text-align: center;
+  position:relative;
+  top: 20%;
+  font-family: 'Lobster', cursive;
+  font-size: 150px;
+  margin-top: -90px;
+}
+#clock1{
+  text-align: center;
+  position:relative;
+  top: 30%;
+  font-family: 'Lobster', cursive;
+  font-size: 150px;
+  margin-top: -90px;
+}
+#clock2{
+  text-align: center;
+  position:relative;
+  top: 40%;
+  font-family: 'Lobster', cursive;
+  font-size: 150px;
+  margin-top: -90px;
+}
+html, body{
+  height:100%;
+}
+
+</style>
+</head>
+<body>
+<div id="clock"></div>
+<div id="clock1"></div>
+<div id="clock2"></div>
+<script id="jsbin-javascript">
+function colorClock(){
+  var date = new Date();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+  var hexColor = '#' + hours + minutes + seconds;
+  document.body.style.background = hexColor;
+  if (seconds < 10) {
+    seconds = '0' + seconds;
+  }
+  if (hours < 10) {
+    hours = '0' + hours;
+  }
+  if (minutes < 10) {
+    minutes = '0' + minutes;
+  }
+  var clockFace = hours;
+  var clockFace1 = minutes;
+  var clockFace2 = seconds;
+  document.getElementById('clock').innerHTML = clockFace;
+  document.getElementById('clock1').innerHTML = clockFace1;
+  document.getElementById('clock2').innerHTML = clockFace2;
+  setTimeout(function() {
+    colorClock();
+  }, 1000);
+
+}
+colorClock();
+
+
+</script>
+</body>
+</html>
